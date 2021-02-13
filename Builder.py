@@ -1,5 +1,5 @@
 from src.Engine import Engine
 
 GAMERUN = Engine()
-while GAMERUN.GAMELOOP:
+if GAMERUN.GAMELOOP:
     GAMERUN.run_loop()
