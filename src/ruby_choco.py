@@ -6,7 +6,7 @@ from pygame import Rect
 from .SpriteSheet import SpriteSheet
 
 
-spritesheet = SpriteSheet("res/rubyyyy.png")
+spritesheet = SpriteSheet("res/ruby.png")
 
 class Window(Sprite):
     def __init__(self, *groups):
@@ -36,7 +36,7 @@ class RubyChoco(Sprite):
         global spritesheet
         self.sprite = spritesheet.get_sprite(160, 0, 32, 32)
         self.image = scale(self.sprite, [16*2*4, 16*2*4])
-        self.rect = Rect(16*4, 16*4, 16*12,16*12)
+        self.rect = Rect(16*4+4, 16*4+12, 16*12,16*12)
         self.rota = 0
         self.scala = 0
 
@@ -55,22 +55,20 @@ class BotaoMelhorias(Sprite):
         self.image = scale(self.image, [14*4, 14*4])
         self.rect = Rect(12, (16*16)+12, 14, 14)
 
-
     def update(self):
         ...
     def click(self):
         a = display.init()
         janela = display.set_mode([514, 514])
 
-class Calculator(Sprite):
+class ChocolatesGanhoClick(Sprite):
     def __init__(self, pos, *groups):
         super().__init__(*groups)
         texto = Font("res/font/AvenuePixel-Regular.ttf", 36)
-        self.image = texto.render("10000+", False, (255,255,255))
+        self.image = texto.render("1+", False, (255,255,255))
         self.rect = Rect(pos[0], pos[1], 15, 15)
         self.pos = pos[1]
         self.rect.x -= 14
-
 
     def update(self):
         self.rect.y -= 1
